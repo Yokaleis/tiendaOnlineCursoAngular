@@ -1,0 +1,151 @@
+/* components/nav-bar/nav-bar.component.scss */
+
+.show-mobile {
+  display: block;
+  box-shadow: 0px 2px 5px rgb(black, .2);
+}
+
+.show-mobile div {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.show-mobile div .logo img {
+  width: 15%;
+  display: flex;
+  margin: auto;
+}
+
+.show-mobile button {
+  border: 0;
+  background: transparent;
+}
+
+.hide-mobile {
+  width: 100%;
+  height: 80px;
+  display: none;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+}
+
+.hide-mobile div {
+  padding: 0.6em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.hide-mobile .logo img {
+  width: 15%;
+  margin-right: 1em;
+}
+
+.hide-mobile nav {
+  display: flex;
+  align-items: center;
+}
+
+.hide-mobile nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.hide-mobile nav ul a {
+  margin: 0 .2em;
+  color: inherit;
+  text-decoration: none;
+}
+
+.hide-mobile nav ul a.active {
+  margin: 0 .2em;
+  color: purple;
+  text-decoration: none;
+  border-bottom: 2px solid purple;
+}
+
+.hide-mobile .info {
+  display: flex;
+  align-items: center;
+}
+
+.hide-mobile .account {
+  margin-right: .5em;
+}
+
+.show-mobile .side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform: translateX(-100%);
+  transition: all ease-out;
+}
+.show-mobile .side-menu.active {
+  transform: translateX(0);
+}
+.show-mobile .side-menu button {
+  position: absolute;
+  right: 1em;
+}
+.show-mobile .side-menu ul {
+  position: absolute;
+  left: 1em;
+  top: 2em;
+}
+.show-mobile .side-menu ul li {
+  margin: 15px;
+  text-decoration: none;
+  color: black;
+}
+.show-mobile .side-menu ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+.counter {
+  width: 20px;
+  height: 20px;
+  background-color: PaleVioletRed;
+  border: 3px solid white;
+  color: white;
+  border-radius: 50px;
+  position: relative;
+  left: -10px;
+  top: -10px;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .show-mobile {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+  .show-mobile {
+    display: none;
+  }
+
+  .hide-mobile {
+    display: block;
+  }
+}

@@ -1,0 +1,19 @@
+<section>
+    <h1>Uso de @Inputs</h1>
+    <p>Sirve para pasar información (comunicar) de un componente padre a un componente hijo</p>
+</section>
+<section>
+    <!-- Si la imagen tiene una carga erronea usamos el evento de error, este evento es interno no se comunica con el padre -->
+    <!-- El evento imgLoaded se comunica con el padre cuando la imagen es cargada exitosamente, mediante el decorador @output-->
+    <img width="500" (error)="imgError()" (load)="imgLoaded()" [src]="img" *ngIf="img; else elseImg">
+    <!-- Si la imagen no coincide o el input para buscar la imagen queda vacio, 
+    usamos un ngif para crear la condicion (usando un else) -->
+    <ng-template #elseImg>
+        <!-- Si se cumple el else se renderiza esta imagen -->
+        <img [src]="imgDefault">
+    </ng-template>
+</section>
+
+<section>
+   <!--  <h3>{{counter}}</h3> -->
+</section>
