@@ -14,7 +14,7 @@ import { User } from "../../../models/users.models";
 @Component({
   selector: 'app-navegation',
   templateUrl: './navegation.component.html',
-  styleUrls: ['./navegation.component.css']
+  styleUrls: ['./navegation.component.css', './navegation.components02.css'],
 })
 export class NavegationComponent implements OnInit {
 
