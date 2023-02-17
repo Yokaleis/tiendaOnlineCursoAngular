@@ -18,11 +18,11 @@ import { User } from "../../../models/users.models";
 })
 export class NavegationComponent implements OnInit {
 
+  showCartDetail = false;
+
   activeMenu = false;
   counter = 0;
   categories: Category[] = [];
-  //Guardar el token en memoria
-  token= '';
   profile: User | null = null;
 
   constructor(
@@ -37,7 +37,7 @@ export class NavegationComponent implements OnInit {
       this.counter = products.length;
     });
     this.getAllCategories();
-    this.authService.user$
+    this.authService.user
     .subscribe(data => {
       this.profile = data;
     })
@@ -55,14 +55,17 @@ export class NavegationComponent implements OnInit {
   }
 
   login() {
-    this.authService.loginAndGet('john@mail.com','changeme')
-    .subscribe(rta => {
+    //this.authService.loginAndGet('admin@mail.com','admin123')//Admin
+    this.authService.loginAndGet('john@mail.com','changeme')//Customer
+    .subscribe(() => {
       this.router.navigate(['/profile']);
     });
   } 
   logout(){
     this.authService.logout();
+    //Si cerramos el perfil lo limpiamos
     this.profile = null;
+    //Y lo reddireccionamos al home
     this.router.navigate(['/home']);
 
   }

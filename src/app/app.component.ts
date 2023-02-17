@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { UsersService } from "./services/users.service";
 import { AuthService } from "./services/auth.service";
+
+import { TokenService } from "./services/token.service";
 
 
 @Component({
@@ -9,14 +11,23 @@ import { AuthService } from "./services/auth.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   imgPadre = '';
   showImg = true;
 
   constructor(
     private authService: AuthService,
+    private tokenService: TokenService,
     private usersService: UsersService
   ){}
+    //De esta forma mantenemos el estado de login del usuario y al ir a otra ruta no tendra que entrar nuevamente
+  ngOnInit(){
+    const token = this.tokenService.getToken();
+    if(token){
+      this.authService.getProfile()
+      .subscribe()
+    }
+  }
 
 
   onLoaded(img: String) {

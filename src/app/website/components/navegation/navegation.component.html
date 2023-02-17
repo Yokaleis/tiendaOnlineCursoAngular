@@ -37,10 +37,10 @@
         </nav>
         <div class="info">
             <div class="account">
-                <button *ngIf="!profile; else elseBlock" (click)="login()">Login</button>
+                <button class="btn-login" *ngIf="!profile; else elseBlock" (click)="login()">Login</button>
                 <ng-template #elseBlock>
-                    <a routerLink="/profile">{{ profile?.email }}</a>
-                    <button (click)="logout()">Salir</button>
+                    <a class="profile-name" routerLink="/profile">{{ profile?.email }}</a>
+                    <button class="btn-bye" (click)="logout()">Salir</button>
                 </ng-template>
             </div>
             <div>
@@ -49,6 +49,9 @@
                 </a>
                 <!-- Este counter funciona de forma reactiva comunicandose a traves de un store/servicio -->
                 <span class="counter"> {{counter}} </span>
+                <div class="counter-detail" [class.active]="showCartDetail">
+                    Contador carrito
+                </div>
             </div>
         </div>
     </div>

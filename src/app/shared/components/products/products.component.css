@@ -8,22 +8,83 @@
 .product-detail {
     position: fixed;
     top: 0;
-    left: 65%;
+    left: 70%;
     bottom: 0;
     right: 0;
     background-color: white;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     transition: all ease-out 0.5s;
     transform: translateX(100%);
-  }
-  
-  .product-detail.active {
+}
+
+.slider {
+    margin-bottom: 30px;
+}
+
+.btn-close {
+    margin: 5px;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-edit {
+    border-radius: 3px;
+    background-color: #F6DDCC;
+    color: #17202A;
+    border: 0;
+    padding: 10px 20px;
+    margin: 0px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.btn-delete {
+    border-radius: 3px;
+    background-color: #17202A;
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+    margin: 10px 0px 0px 0px;
+    cursor: pointer;
+}
+
+.product-detail.active {
     transform: translateX(0);
-  }
+}
 
+.title-product,
+.price-product {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
+.description-product p {
+    font-size: 10px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.onloadmore {
+    margin: 25px;
+    padding: 25px;
+    text-align: center;
+}
+
+.btn-loadmore {
+    border-radius: 3px;
+    background-color: #17202A;
+    color: white;
+    border: 0;
+    padding: 15px 30px;
+}
 
 /* TABLETS */
 @media screen and (min-width: 40em) and (max-width: 63.9em) {
@@ -32,7 +93,7 @@
         flex-direction: column;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 10px;
-    }   
+    }
 }
 
 /* DESKTOP */
@@ -44,5 +105,5 @@
         grid-gap: 25px;
         grid-column-gap: 40px;
         justify-items: center;
-    }   
+    }
 }

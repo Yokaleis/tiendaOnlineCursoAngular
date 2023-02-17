@@ -13,6 +13,7 @@ import { LayoutComponent } from "./components/layout/layout.component";
 
 /*GUARDIANS*/
 import { AuthGuard } from "./../guards/auth.guard";
+import { ExitGuard } from "./../guards/exit.guard";
 
 
 
@@ -52,6 +53,7 @@ const routes: Routes = [
       },
       {
         path: 'register',
+        canDeactivate: [ExitGuard],
         component: RegisterComponent
       },
       {

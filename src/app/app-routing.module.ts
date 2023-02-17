@@ -7,6 +7,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { CustomPreloadService } from "./services/custom-preload.service";
 
+import { AdminGuard } from "./guards/admin.guard";
+
 
 
 
@@ -23,6 +25,7 @@ const routes: Routes = [
   // Renderizando el modulo cms o modulo de administracion
   {
     path: 'cms',
+    canActivate: [AdminGuard],
     //Esto nos permite hacer la carga peresoza y cody spilling
     loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)
   },

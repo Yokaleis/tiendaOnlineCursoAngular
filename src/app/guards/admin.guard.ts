@@ -3,53 +3,37 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Rout
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { TokenService } from "./../services/token.service";
+//Importamos el estado del usuario
 import { AuthService } from "./../services/auth.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
 
   constructor(
-    private tokenService: TokenService,
     private authService: AuthService,
     private router: Router
   ){}
-
 
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-      //Condicional
-      
-      /*   
-  const token = this.tokenService.getToken();
-    if(!token){
-      this.router.navigate(['/home']);
-      return false;
-    }
-    return true;
-    
-  */
-
-    return this.authService.user
+      return this.authService.user
   .pipe(
     map(user => {
-      if(!user) {
+      //Este signo de pregunta es importante por que nos protege de errores por que podemos recibir un null 
+      if(user?.role === 'admin') {
+        return true;
+      }else{
         this.router.navigate(['/home']);
-        return false;
+        return false;//Si no es admin no lo dejamos ingresar
       }
-      return true;
     })
   )
 }
 
-
-} 
-
+  }
   
-
-

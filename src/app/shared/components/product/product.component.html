@@ -1,15 +1,19 @@
 <section class="container-catalogue">
     <a [routerLink]="['/product', product.id]">
-        <img  *ngIf="product.images.length > 0" [src]="product.images[0]" alt="">
+        <img *ngIf="product.images.length > 0" [src]="product.images[0]" alt="">
     </a>
     <!-- Currency es un pipe que trae angular por defecto, los pipes son tuberias que pueden transformar la informacion -->
     <div class="price-title">
         <p class="title-product">{{product.title}}</p>
         <p class="price-product ">{{product.price | currency: 'USD'}}</p>
     </div>
-    <!-- <p>{{product.description}}</p> -->
+    <div class="description-product">
+        <p class="description-product">{{product.description}}</p>
+    </div>
     <p class="category-product">{{product.category.name}}</p>
     <!-- <button class="btn-detail" (click)="verDetalle()">Ver detalle</button> -->
-    <a routerLink="." [queryParams]="{product: product.id}">Ver detalle</a>
-    <button class="btn-cart" (click)="agregarAlCarrito()">Agregar</button>
+    <div class="buttons">
+        <button class="btn-detail" routerLink="." [queryParams]="{product: product.id}">Ver detalle</button>
+        <button class="btn-cart" (click)="agregarAlCarrito()">Agregar al carrito</button>
+    </div>
 </section>

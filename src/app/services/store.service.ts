@@ -11,7 +11,6 @@ export class StoreService {
   private listaProductos: Product[] = [];
   /*Esto es como un estado copartido, permite compartir datos entre componentes de forma reactiva*/
   private carritoCompras = new BehaviorSubject<Product[]>([]);
-
   /*Esto es un observable*/
   carritoCompras$ = this.carritoCompras.asObservable();
 

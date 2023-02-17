@@ -17,6 +17,8 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -30,7 +32,9 @@ import { LayoutComponent } from './components/layout/layout.component';
     RecoveryComponent,
     ProfileComponent,
     ProductDetailComponent,
-    LayoutComponent
+    LayoutComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,

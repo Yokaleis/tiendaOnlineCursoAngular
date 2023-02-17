@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .show-mobile div .logo img {
   width: 15%;
   display: flex;
@@ -27,7 +28,7 @@
   height: 80px;
   display: none;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 
 .hide-mobile div {
@@ -54,25 +55,45 @@
 }
 
 .hide-mobile nav ul a {
+  font-size: 15px;
   margin: 0 .2em;
-  color: inherit;
+  color: #17202A;
   text-decoration: none;
 }
 
 .hide-mobile nav ul a.active {
   margin: 0 .2em;
-  color: purple;
+  color: #17202A;
   text-decoration: none;
-  border-bottom: 2px solid purple;
+  border-bottom: 2px solid #17202A;
 }
 
 .hide-mobile .info {
   display: flex;
   align-items: center;
+  justify-content: initial;
 }
 
 .hide-mobile .account {
   margin-right: .5em;
+}
+
+.hide-mobile .btn-login,
+.btn-bye {
+  border-radius: 3px;
+  background-color: #17202A;
+  color: white;
+  border: 0;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.hide-mobile .info .profile-name {
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #17202A;
+  margin-right: 10px;
 }
 
 .show-mobile .side-menu {
@@ -88,24 +109,29 @@
   transform: translateX(-100%);
   transition: all ease-out;
 }
+
 .show-mobile .side-menu.active {
   transform: translateX(0);
 }
+
 .show-mobile .side-menu button {
   position: absolute;
   right: 1em;
 }
+
 .show-mobile .side-menu ul {
   position: absolute;
   left: 1em;
   top: 2em;
 }
+
 .show-mobile .side-menu ul li {
   margin: 15px;
   text-decoration: none;
   color: black;
 }
-.show-mobile .side-menu ul li a{
+
+.show-mobile .side-menu ul li a {
   text-decoration: none;
   color: black;
 }
@@ -113,7 +139,7 @@
 .counter {
   width: 20px;
   height: 20px;
-  background-color: PaleVioletRed;
+  background-color: #17202A;
   border: 3px solid white;
   color: white;
   border-radius: 50px;
@@ -126,6 +152,25 @@
   font-size: 11px;
   font-weight: 600;
 }
+
+.counter-detail {
+  position: fixed;
+  top: 0;
+  left: 65%;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all ease-out 0.5s;
+  transform: translateX(100%);
+}
+
+.counter-detail.active {
+  transform: translateX(0);
+}
+
 
 
 /* Medium only */

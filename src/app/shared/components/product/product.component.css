@@ -12,16 +12,33 @@ p, h4{
     justify-content: space-between;
 }
 .price-title .title-product, .price-product {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+.description-product p {
+    font-size: 10px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.category-product{
+    font-weight: bolder;
+}
+.btn-detail {
+    border-radius: 3px;
+    background-color: #F6DDCC;
+    color: #17202A;
+    border: 0;
+    padding: 4px 20px;
+    margin: 20px 0px 0px 0px;
+    cursor: pointer;
+}
 .btn-cart {
-    border-radius: 50px;
-    background-color: PaleVioletRed;
+    border-radius: 3px;
+    background-color: #17202A;
     color: white;
     border: 0;
     padding: 4px 20px;
-    margin-top: 20px;
+    margin: 20px 0px 0px 5px;
+    cursor: pointer;
 }

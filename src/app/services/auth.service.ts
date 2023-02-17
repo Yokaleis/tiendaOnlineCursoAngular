@@ -15,14 +15,22 @@ export class AuthService {
   //private apiUrl = 'https://young-sands-07814.herokuapp.com/api/auth';
   private apiUrl = 'https://damp-spire-59848.herokuapp.com/api/auth';
   //private apiUrl = 'https://api.escuelajs.co/api/v1/auth/login';
-  private user = new BehaviorSubject<User | null>(null);
-  user$ = this.user.asObservable();
+  //Reactivamente guardamos el estado del usuario
+  private user$ = new BehaviorSubject<User | null>(null);
+  user = this.user$.asObservable();
 
   constructor(
     private http: HttpClient,
     private tokenService: TokenService
   ) { }
-
+  
+  getCurrentUser() {
+    const token = this.tokenService.getToken();
+    if (token) {
+      this.getProfile()
+      .subscribe()
+    }
+  }
 
   //Metodo de login
   login(email: string, password:string){
@@ -35,8 +43,9 @@ export class AuthService {
   //Metodo para obtener el perfil del usuario
   getProfile() {
     return this.http.get<User>(`${this.apiUrl}/profile`)
+    //Esto permite hacer la peticion una vez
     .pipe(
-      tap(user => this.user.next(user))
+      tap(user => this.user$.next(user))
     );
   }
   /* getProfile(token: string){
@@ -55,7 +64,8 @@ export class AuthService {
   }
 
   logout(){ 
-    this.tokenService.removeToken()
+    this.tokenService.removeToken();
+    this.user$.next(null);
   }
 
 }
