@@ -22,6 +22,7 @@ export class ProductsComponent {
   @Input() products: Product[] = [];
   @Output() loadMore = new EventEmitter();
 
+
   @Input()
   set productId(id: string | null){
     if(id){

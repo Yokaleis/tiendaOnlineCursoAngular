@@ -1,10 +1,11 @@
 .show-mobile .side-menu {
+  width: 50%;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: aliceblue;
+    background-color: rgb(246 221 204 / 96%);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

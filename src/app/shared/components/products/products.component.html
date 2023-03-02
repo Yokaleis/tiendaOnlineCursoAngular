@@ -5,8 +5,8 @@
 <!-- <button (click)="crateNewProduct()">Crear nuevo producto</button> -->
 <div class="products-grid">
   <!-- Recorremos el arreglo de productos usando el ngFor, con [product]="product" le estamos enviando el input -->
-  <app-product [product]="product" *ngFor="let product of products" (addProduct)="productoAgregado($event)"
-    (verDetalleProduct)="detalleProdutPadre($event)">
+  <app-product  [product]="product" *ngFor="let product of products" (addProduct)="productoAgregado($event)"
+    (verDetalleProduct)="detalleProdutPadre($event)" >
   </app-product>
 </div>
 <div class="onloadmore">

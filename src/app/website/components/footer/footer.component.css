@@ -1,6 +1,105 @@
 .footer{
-    width: 100%;
-    height: 250px;
+    max-width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 10px;
+    padding: 20px;
+    color: #FFF;
+    background-color: #17202a;
+    text-align: center;
+    /* max-width: 100%;
+    height: auto;
     background: #17202A;
     color: #FFF;
+    padding: 80px;
+    text-align: center; */
 }
+
+.footer .conten-footer-primary{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+}
+.footer .conten-footer-primary .social-media {
+    margin: auto;
+}
+.footer .conten-footer-primary .social-media ul{
+    display: flex;
+}
+.footer .conten-footer-primary .social-media ul li{
+    margin-right: 25px;
+}
+.footer .conten-footer-primary ul li{
+    margin-bottom: 10px;
+}
+.footer .conten-footer-primary ul li a{
+    color: #FFF;
+    font-size: 12px;
+    text-decoration: none;
+}
+.footer .divider{
+    width: 85%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f6ddcc7d;
+}
+.footer .conten-footer-secondary{
+    display: grid;
+    grid-auto-rows: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    align-items: center;
+}
+.footer .conten-footer-secondary .rights{
+    color: #FFF;
+    font-size: 12px;
+}
+
+.footer .conten-footer-secondary ul li a{
+    color: #FFF;
+    font-size: 12px;
+    text-decoration: none;
+}
+.footer .conten-footer-secondary .payments ul{
+    display: flex;
+    justify-content: center;
+}
+.footer .conten-footer-secondary .payments ul li{
+    margin-right: 20px;
+}
+
+/* SHOW MOBILE - RESPONSIVE */
+/* .show-mobile {
+    padding: 20px;
+}
+.show-mobile .mobile-primary {
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.show-mobile .mobile-primary .mobile-social {
+    margin: 20px 0px 20px;
+}
+.show-mobile .divider{
+    margin: auto;
+}
+.show-mobile .mobile-primary .mobile-social ul { 
+    display: flex;
+    justify-content: center;
+}
+.show-mobile .mobile-primary .mobile-info {
+    margin-bottom: 20px;
+}
+.show-mobile .mobile-primary .mobile-social ul li { 
+    margin: auto;
+}
+.show-mobile .mobile-secondary {
+    flex-direction: column-reverse;
+    margin-top: 15px;
+}
+.show-mobile .mobile-secondary .mobile-payments {
+    margin: 20px 0px 20px;
+}
+.show-mobile .mobile-secondary .mobile-payments ul li { 
+    margin: auto;
+} */

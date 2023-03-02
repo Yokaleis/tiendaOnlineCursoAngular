@@ -12,9 +12,10 @@ import { Product} from 'src/app/models/product.models';
 export class HomeComponent implements OnInit {
 
   products: Product[] = [];
-  limit = 8;
+  limit = 4;
   offset = 0;
   productId: string | null = null;
+  
 
   constructor(
     private productsService: ProductsService,
@@ -24,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     /*Traemos todos los productos*/
-    this.productsService.getTodosProductos(8, 0)
+    this.productsService.getTodosProductos(4, 0)
     .subscribe(data => {
       //console.log(data);
       this.products = data;

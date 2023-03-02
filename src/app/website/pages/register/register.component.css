@@ -1,0 +1,45 @@
+.container{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.main {
+    width: 60%;
+    height: 500px;
+
+}
+.main .form-login {
+    width: 60%;
+    padding: 20px;
+    margin: auto;
+}
+.main .form-login .hello-login {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.main .form-login input {
+    width: 100%;
+    border: 1px solid #ededed;
+    border-radius: 3px;
+    padding: 6px 6px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.btn-login {
+    width: 100%;
+    border-radius: 3px;
+    background-color: #17202A;
+    color: white;
+    border: 0;
+    padding: 10px 20px;
+    margin: 10px 0px 0px 0px;
+    cursor: pointer;
+    text-align: center;
+}
+.minor {
+    width: 30%;
+    height: 500px;
+    background-color: #17202A;
+}
