@@ -1,29 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { GridComponent } from './pages/grid/grid.component';
-import { TasksComponent } from './pages/tasks/tasks.component';
-import { LayoutComponent } from './components/layout/layout.component';
 
 
+/* PAGES */
+import { NavegationComponent } from "./components/navegation/navegation.component";
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent,
+    component: NavegationComponent,
     children: [
       {
         path: '',
-        redirectTo: 'grid',
-        pathMatch: 'full'
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
-        path: 'grid',
-        component: GridComponent
+        path: 'categories',
+        loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
       },
       {
-        path: 'task',
-        component: TasksComponent
-      }
+        path: 'products',
+        loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
+      },
     ]
   }
 ];

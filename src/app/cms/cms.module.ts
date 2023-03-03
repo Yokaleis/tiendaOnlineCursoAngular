@@ -2,16 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CmsRoutingModule } from './cms-routing.module';
-import { GridComponent } from './pages/grid/grid.component';
-import { TasksComponent } from './pages/tasks/tasks.component';
 import { LayoutComponent } from './components/layout/layout.component';
+
+import { NavegationComponent } from './components/navegation/navegation.component';
+import { BasicFormComponent } from './components/basic-form/basic-form.component';
 
 
 @NgModule({
   declarations: [
-    GridComponent,
-    TasksComponent,
-    LayoutComponent
+    LayoutComponent,
+    NavegationComponent,
+    BasicFormComponent
   ],
   imports: [
     CommonModule,

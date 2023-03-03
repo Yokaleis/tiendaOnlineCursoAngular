@@ -1,0 +1,19 @@
+<div>
+    <header>
+      <h3>Hola {{profile?.name}}</h3>
+    </header>
+    <nav>
+      <ul>
+        <li><a routerLink="/cms"><span class="material-symbols-outlined icon">space_dashboard</span>Dashboard</a></li>
+        <li><a routerLink="/cms/categories"><span class="material-symbols-outlined icon">
+          category
+          </span>Categorias</a></li>
+        <li><a routerLink="/cms/products"><span class="material-symbols-outlined icon">
+          shopping_bag
+          </span>Productos</a></li>
+      </ul>
+    </nav>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>

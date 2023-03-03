@@ -55,8 +55,8 @@ export class NavegationComponent implements OnInit {
   }
 
   login() {
-    //this.authService.loginAndGet('admin@mail.com','admin123')//Admin
-    this.authService.loginAndGet('john@mail.com','changeme')//Customer
+    this.authService.loginAndGet('admin@mail.com','admin123')//Admin
+    //this.authService.loginAndGet('john@mail.com','changeme')//Customer
     .subscribe(() => {
       this.router.navigate(['/profile']);
     });
